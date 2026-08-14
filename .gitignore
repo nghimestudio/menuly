@@ -1,0 +1,42 @@
+# Env / secrets
+.env
+.env.*
+!.env.example
+worker/.dev.vars
+.dev.vars
+
+# Node / Cloudflare
+node_modules/
+.wrangler/
+dist/
+.devtools/
+worker/.wrangler/
+worker/node_modules/
+
+# Android
+*.iml
+.gradle/
+local.properties
+.idea/
+captures/
+*.apk
+*.ap_
+*.aab
+*.dex
+bin/
+gen/
+out/
+build/
+android/.gradle/
+android/app/build/
+android/local.properties
+android/.idea/
+*.keystore
+*.jks
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kotlin/IDE noise
+android/.kotlin/

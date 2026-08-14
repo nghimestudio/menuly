@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Menuly</string>
+    <string name="ai_waiter">AI Waiter</string>
+    <string name="mood_question">What do you feel like eating?</string>
+    <string name="home_hint">Pick a mood → Scan Menu → AI waiter picks a dish.\nChat more after you get a suggestion.</string>
+    <string name="scan_menu">Scan Menu</string>
+    <string name="nav_waiter">Waiter</string>
+    <string name="nav_history">History</string>
+    <string name="history">History</string>
+    <string name="history_empty">No suggestions yet. Scan a menu!</string>
+    <string name="budget_action">Budget (cheapest)</string>
+
+    <string name="mood_recommend">Recommend me</string>
+    <string name="mood_delicious">Delicious</string>
+    <string name="mood_high_protein">High protein</string>
+    <string name="mood_green_diet">Green diet</string>
+    <string name="mood_budget">Budget</string>
+
+    <string name="scan_title">Scan Menu</string>
+    <string name="scan_align_hint">Frame the menu, then tap Scan</string>
+    <string name="scan_aim_hint">Aim at the menu, then tap Scan</string>
+    <string name="scan_auto_hint">Point at the menu — scanning…</string>
+    <string name="scan_camera_permission">Camera permission is needed to scan the menu</string>
+    <string name="scan_allow_camera">Allow camera</string>
+    <string name="scan_hold_still">Hold still</string>
+    <string name="scan_scanning">Scanning…</string>
+    <string name="scan_action">Scan</string>
+    <string name="scan_retry">Try again</string>
+    <string name="scan_ocr_fail">Couldn\'t read text — try again, hold still</string>
+    <string name="scan_done">Got it!</string>
+    <string name="scan_error">Scan failed — try again</string>
+
+    <string name="analyzing_title">AI Waiter is thinking…</string>
+    <string name="analyzing_default">Hang tight — analyzing the menu and picking for you.</string>
+    <string name="analyzing_api">Calling AI waiter… one moment 🍽️</string>
+    <string name="analyzing_followup">Waiter is listening to your request…</string>
+    <string name="error_ocr_short">Couldn\'t read the menu. Try again and hold still.</string>
+    <string name="error_no_menu">No menu text left to ask again.</string>
+    <string name="error_analyze_failed">Analysis failed</string>
+
+    <string name="result_title">Waiter\'s pick</string>
+    <string name="result_pick_heading">I pick this one</string>
+    <string name="result_fit_score">%.1f/10 match</string>
+    <string name="result_waiter_note">💬 Waiter note</string>
+    <string name="result_runner_up">Runner-up</string>
+    <string name="result_skip">Skip</string>
+    <string name="result_scanned_menu">Scanned menu (cross-check)</string>
+    <string name="result_ask_more">Ask the AI waiter</string>
+    <string name="result_ask_placeholder">e.g. Spicier / cheaper / more protein…</string>
+    <string name="result_ask_button">Ask waiter</string>
+    <string name="result_asking">Asking…</string>
+    <string name="result_scan_again">Scan another menu</string>
+    <string name="result_disclaimer_default">Allergen &amp; nutrition estimates only. Ingredients, sauces, oil, and cross-contact may vary by restaurant.</string>
+    <string name="meta_spicy">🌶️ Spice: %1$s</string>
+    <string name="meta_protein">🥩 Protein: %1$s</string>
+    <string name="level_none">none</string>
+    <string name="level_low">low</string>
+    <string name="level_medium">medium</string>
+    <string name="level_high">high</string>
+
+    <string name="lang_title">Choose language</string>
+    <string name="lang_subtitle">Defaults to your device language. You can change it anytime.</string>
+    <string name="lang_continue">Continue</string>
+    <string name="lang_system">Device language</string>
+    <string name="lang_english">English</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_chinese">中文</string>
+    <string name="lang_japanese">日本語</string>
+    <string name="lang_korean">한국어</string>
+    <string name="ok">OK</string>
+    <string name="change_language">Language</string>
+</resources>

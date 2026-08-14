@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Menuly</string>
+    <string name="ai_waiter">AI Waiter</string>
+    <string name="mood_question">Bạn muốn ăn kiểu gì?</string>
+    <string name="home_hint">Chọn mood → Scan Menu → AI waiter chọn món.\nChat thêm sau khi có gợi ý.</string>
+    <string name="scan_menu">Scan Menu</string>
+    <string name="nav_waiter">Waiter</string>
+    <string name="nav_history">History</string>
+    <string name="history">History</string>
+    <string name="history_empty">Chưa có gợi ý nào. Scan menu đi!</string>
+    <string name="budget_action">Budget (rẻ nhất)</string>
+
+    <string name="mood_recommend">Recommend me</string>
+    <string name="mood_delicious">Ngon</string>
+    <string name="mood_high_protein">Nhiều protein</string>
+    <string name="mood_green_diet">Green diet</string>
+    <string name="mood_budget">Budget</string>
+
+    <string name="scan_title">Scan Menu</string>
+    <string name="scan_align_hint">Căn menu vào khung rồi bấm Scan</string>
+    <string name="scan_aim_hint">Hướng vào menu, rồi bấm Scan</string>
+    <string name="scan_auto_hint">Hướng camera vào menu — đang quét…</string>
+    <string name="scan_camera_permission">Cần quyền camera để scan menu</string>
+    <string name="scan_allow_camera">Cho phép camera</string>
+    <string name="scan_hold_still">Hold still</string>
+    <string name="scan_scanning">Đang scan…</string>
+    <string name="scan_action">Scan</string>
+    <string name="scan_retry">Thử lại</string>
+    <string name="scan_ocr_fail">Không đọc được chữ — thử lại, giữ yên hơn</string>
+    <string name="scan_done">Xong!</string>
+    <string name="scan_error">Scan lỗi — thử lại</string>
+
+    <string name="analyzing_title">AI Waiter đang nghĩ…</string>
+    <string name="analyzing_default">Chờ xíu — đang phân tích menu và chọn món cho bạn.</string>
+    <string name="analyzing_api">Đang gọi AI waiter… chờ xíu nhé 🍽️</string>
+    <string name="analyzing_followup">Waiter đang nghe lại yêu cầu của bạn…</string>
+    <string name="error_ocr_short">Chưa đọc được menu. Thử lại, giữ yên hơn nhé.</string>
+    <string name="error_no_menu">Không còn menu text để hỏi lại.</string>
+    <string name="error_analyze_failed">Phân tích thất bại</string>
+
+    <string name="result_title">Gợi ý của waiter</string>
+    <string name="result_pick_heading">Tao chọn món này</string>
+    <string name="result_fit_score">%.1f/10 phù hợp</string>
+    <string name="result_waiter_note">💬 Waiter note</string>
+    <string name="result_runner_up">Runner-up</string>
+    <string name="result_skip">Skip</string>
+    <string name="result_scanned_menu">Menu đã scan (đối chiếu)</string>
+    <string name="result_ask_more">Hỏi thêm AI waiter</string>
+    <string name="result_ask_placeholder">VD: Muốn cay hơn / rẻ hơn / nhiều protein…</string>
+    <string name="result_ask_button">Hỏi waiter</string>
+    <string name="result_asking">Đang hỏi…</string>
+    <string name="result_scan_again">Scan menu khác</string>
+    <string name="result_disclaimer_default">Allergen &amp; dinh dưỡng chỉ mang tính ước lượng. Thành phần, sốt, dầu và cross-contact có thể khác theo nhà hàng.</string>
+    <string name="meta_spicy">🌶️ Cay: %1$s</string>
+    <string name="meta_protein">🥩 Protein: %1$s</string>
+    <string name="level_none">không</string>
+    <string name="level_low">thấp</string>
+    <string name="level_medium">vừa</string>
+    <string name="level_high">cao</string>
+
+    <string name="lang_title">Chọn ngôn ngữ</string>
+    <string name="lang_subtitle">Mặc định theo ngôn ngữ máy. Bạn có thể đổi bất cứ lúc nào.</string>
+    <string name="lang_continue">Tiếp tục</string>
+    <string name="lang_system">Theo máy</string>
+    <string name="lang_english">English</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_chinese">中文</string>
+    <string name="lang_japanese">日本語</string>
+    <string name="lang_korean">한국어</string>
+    <string name="ok">OK</string>
+    <string name="change_language">Ngôn ngữ</string>
+</resources>

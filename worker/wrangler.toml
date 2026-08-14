@@ -1,0 +1,9 @@
+name = "menuly-api"
+main = "src/index.ts"
+compatibility_date = "2025-02-01"
+
+[vars]
+# Optional shared secret between app and worker (leave empty to disable)
+APP_SECRET = ""
+
+# Set secret via: npx wrangler secret put REPLICATE_API_TOKEN
