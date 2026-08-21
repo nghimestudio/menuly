@@ -1,0 +1,33 @@
+=== App name (30 chars max) ===
+Menuly
+
+=== Short description (80 chars max) ===
+Your AI waiter — scan any menu, pick a mood, get one decisive dish.
+
+=== Full description ===
+Menuly is your AI waiter at the table.
+
+Snap the menu. Choose a mood. Get one clear dish pick — with waiter-style reasoning, not a calorie spreadsheet.
+
+HOW IT WORKS
+1. Pick a mood: Recommend me, Budget, Delicious, High protein, or Green diet
+2. Scan the restaurant menu with your camera
+3. Menuly reads the menu and recommends the best match for how you feel right now
+4. Ask Waiter follow-up questions if you want something different
+
+WHY MENULY
+• Mood-first recommendations — not endless ranked lists
+• One decisive pick + a runner-up and what to skip
+• Works across languages (English, Vietnamese, Chinese, Japanese, Korean)
+• Keeps a local history of past suggestions
+• Dark, fast UI designed for noisy restaurant lighting
+
+BUILT FOR REAL DINING
+Tourists decoding foreign menus. Groups that can’t decide. Anyone who wants a sharp suggestion without overthinking.
+
+NOTES
+• Recommendations are AI estimates based on scanned menu text — always double-check allergens and ingredients with staff.
+• Camera access is used only to read the menu.
+• Menu text is sent to our secure API so the AI can recommend a dish.
+
+Menuly — sit down, scan, decide.

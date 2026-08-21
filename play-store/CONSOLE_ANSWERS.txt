@@ -1,0 +1,79 @@
+PLAY CONSOLE — copy/paste answers
+=================================
+
+App name: Menuly
+Package / applicationId: com.menuly.app
+Default language: English (add Vietnamese as translation)
+App category: Food & Drink  (or Lifestyle)
+Tags: AI, menu, restaurant, food, recommendations
+Email (support): myuni1001@gmail.com
+Privacy policy URL: https://menuly-privacy.pages.dev/
+
+--------------------------------------------------
+App access
+--------------------------------------------------
+All functionality available without login. No special access needed.
+
+--------------------------------------------------
+Ads
+--------------------------------------------------
+No, this app does not contain ads.
+
+--------------------------------------------------
+Content ratings (IARC questionnaire hints)
+--------------------------------------------------
+Violence / sexual content / drugs / gambling: No
+User interaction / shares location: No (unless you add later)
+Unrestricted internet: Yes (loads recommendations)
+Shares user info: No personal accounts
+
+--------------------------------------------------
+Target audience
+--------------------------------------------------
+Target age: 18+ (or 13+ if you prefer — dining utility)
+Not primarily for children.
+
+--------------------------------------------------
+News app / COVID: No
+
+--------------------------------------------------
+Data safety (fill form carefully)
+--------------------------------------------------
+Does your app collect or share user data? → Yes (menu text / preferences for AI)
+
+Data types collected:
+- Photos and videos: NO (OCR on device; we do not upload the photo)
+- App activity / other: Yes — “Other user-generated content” or “In-app search history” style:
+  treat as: User-generated content = menu text + optional note
+- App info and performance: optional No
+- Device or other IDs: No (unless you add analytics later)
+
+Data collected: Menu text, mood selection, optional follow-up note, language
+Collected: Yes
+Shared: Yes (with Cloudflare + Replicate as processors to provide the feature)
+Ephemeral processing: You can mark processing as ephemeral if not stored server-side long-term
+Purpose: App functionality
+Required / Optional: Required for recommendations
+Sold: No
+Encrypted in transit: Yes (HTTPS)
+
+Sensitive permissions:
+- Camera: Yes — declare Camera permission usage for scanning menus
+
+--------------------------------------------------
+Store listing graphics (upload from play-store/graphics + screenshots)
+--------------------------------------------------
+Icon: graphics/icon_512.png
+Feature graphic: graphics/feature_graphic_1024x500.png
+Phone screenshots: screenshots/phone/01_*.png … 03_*.png (upload at least 2)
+
+--------------------------------------------------
+Countries / pricing
+--------------------------------------------------
+Free app. Distribute all countries (or start with your markets).
+
+--------------------------------------------------
+Release notes (v1.0.0)
+--------------------------------------------------
+EN: First release — scan a menu, pick a mood, get an AI waiter dish pick.
+VI: Bản đầu tiên — scan menu, chọn mood, nhận gợi ý món từ AI waiter.

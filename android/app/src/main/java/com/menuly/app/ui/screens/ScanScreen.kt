@@ -20,12 +20,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -123,162 +124,170 @@ fun ScanScreen(
         }
     }
 
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MenulyBlack)
-            .statusBarsPadding(),
+            .statusBarsPadding()
+            .navigationBarsPadding(),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 8.dp, vertical = 4.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            IconButton(onClick = onBack, enabled = !scanning) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = MenulyWhite)
-            }
-            Text(
-                stringResource(R.string.scan_title),
-                color = MenulyWhite,
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                modifier = Modifier.weight(1f),
-            )
-        }
-
-        BoxWithConstraints(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .padding(16.dp)
-                .clip(RoundedCornerShape(20.dp))
-                .background(Color(0xFF111111)),
-        ) {
-            val frameHeight = maxHeight
-            val density = LocalDensity.current
-
-            if (!hasCameraPermission) {
-                Column(
-                    modifier = Modifier.align(Alignment.Center).padding(24.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Text(stringResource(R.string.scan_camera_permission), color = MenulyWhite)
-                    Spacer(Modifier.height(16.dp))
-                    GradientButton(
-                        text = stringResource(R.string.scan_allow_camera),
-                        onClick = onRequestPermission,
-                    )
+        Column(modifier = Modifier.fillMaxSize()) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp, vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                IconButton(onClick = onBack, enabled = !scanning) {
+                    Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Back", tint = MenulyWhite)
                 }
-            } else {
-                AndroidView(
-                    factory = { ctx ->
-                        PreviewView(ctx).also { previewView ->
-                            val providerFuture = ProcessCameraProvider.getInstance(ctx)
-                            providerFuture.addListener({
-                                val provider = providerFuture.get()
-                                val preview = Preview.Builder().build().also {
-                                    it.surfaceProvider = previewView.surfaceProvider
-                                }
-                                val capture = ImageCapture.Builder()
-                                    .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
-                                    .build()
-                                imageCapture = capture
-                                try {
-                                    provider.unbindAll()
-                                    provider.bindToLifecycle(
-                                        lifecycleOwner,
-                                        CameraSelector.DEFAULT_BACK_CAMERA,
-                                        preview,
-                                        capture,
-                                    )
-                                } catch (_: Exception) {
-                                }
-                            }, ContextCompat.getMainExecutor(ctx))
-                        }
-                    },
-                    modifier = Modifier.fillMaxSize(),
+                Text(
+                    stringResource(R.string.scan_title),
+                    color = MenulyWhite,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    modifier = Modifier.weight(1f),
                 )
+            }
 
-                if (scanning) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(
-                                Brush.verticalGradient(
-                                    colorStops = arrayOf(
-                                        0f to Color.Transparent,
-                                        (sweep.value - 0.1f).coerceIn(0f, 1f) to Color.Transparent,
-                                        sweep.value to AccentPink.copy(alpha = 0.28f),
-                                        (sweep.value + 0.1f).coerceIn(0f, 1f) to Color.Transparent,
-                                        1f to Color.Transparent,
+            BoxWithConstraints(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 8.dp, bottom = 8.dp)
+                    .clip(RoundedCornerShape(20.dp))
+                    .background(Color(0xFF111111)),
+            ) {
+                val frameHeight = maxHeight
+                val density = LocalDensity.current
+
+                if (!hasCameraPermission) {
+                    Column(
+                        modifier = Modifier.align(Alignment.Center).padding(24.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Text(stringResource(R.string.scan_camera_permission), color = MenulyWhite)
+                        Spacer(Modifier.height(16.dp))
+                        GradientButton(
+                            text = stringResource(R.string.scan_allow_camera),
+                            onClick = onRequestPermission,
+                        )
+                    }
+                } else {
+                    AndroidView(
+                        factory = { ctx ->
+                            PreviewView(ctx).also { previewView ->
+                                val providerFuture = ProcessCameraProvider.getInstance(ctx)
+                                providerFuture.addListener({
+                                    val provider = providerFuture.get()
+                                    val preview = Preview.Builder().build().also {
+                                        it.surfaceProvider = previewView.surfaceProvider
+                                    }
+                                    val capture = ImageCapture.Builder()
+                                        .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                                        .build()
+                                    imageCapture = capture
+                                    try {
+                                        provider.unbindAll()
+                                        provider.bindToLifecycle(
+                                            lifecycleOwner,
+                                            CameraSelector.DEFAULT_BACK_CAMERA,
+                                            preview,
+                                            capture,
+                                        )
+                                    } catch (_: Exception) {
+                                    }
+                                }, ContextCompat.getMainExecutor(ctx))
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize(),
+                    )
+
+                    if (scanning) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(
+                                    Brush.verticalGradient(
+                                        colorStops = arrayOf(
+                                            0f to Color.Transparent,
+                                            (sweep.value - 0.1f).coerceIn(0f, 1f) to Color.Transparent,
+                                            sweep.value to AccentPink.copy(alpha = 0.28f),
+                                            (sweep.value + 0.1f).coerceIn(0f, 1f) to Color.Transparent,
+                                            1f to Color.Transparent,
+                                        )
                                     )
+                                ),
+                        )
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(4.dp)
+                                .offset(
+                                    y = with(density) {
+                                        ((frameHeight.toPx() - 4.dp.toPx()) * sweep.value).toDp()
+                                    }
                                 )
-                            ),
-                    )
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(4.dp)
-                            .offset(
-                                y = with(density) {
-                                    ((frameHeight.toPx() - 4.dp.toPx()) * sweep.value).toDp()
-                                }
-                            )
-                            .background(
-                                Brush.horizontalGradient(
-                                    listOf(AccentOrange, AccentPink, AccentPurple)
-                                )
-                            ),
-                    )
-                    Text(
-                        holdStill,
-                        color = MenulyWhite,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 22.sp,
-                        modifier = Modifier
-                            .align(Alignment.Center)
-                            .background(Color.Black.copy(alpha = 0.35f), RoundedCornerShape(12.dp))
-                            .padding(horizontal = 18.dp, vertical = 10.dp),
-                    )
-                }
+                                .background(
+                                    Brush.horizontalGradient(
+                                        listOf(AccentOrange, AccentPink, AccentPurple)
+                                    )
+                                ),
+                        )
+                        Text(
+                            holdStill,
+                            color = MenulyWhite,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 22.sp,
+                            modifier = Modifier
+                                .align(Alignment.Center)
+                                .background(Color.Black.copy(alpha = 0.35f), RoundedCornerShape(12.dp))
+                                .padding(horizontal = 18.dp, vertical = 10.dp),
+                        )
+                    }
 
-                if (flashAlpha > 0.01f) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color.White.copy(alpha = flashAlpha)),
-                    )
+                    if (flashAlpha > 0.01f) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White.copy(alpha = flashAlpha)),
+                        )
+                    }
                 }
             }
+
+            // Reserved footer so Scan is never covered by system nav / gesture bar
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(MenulyBlack)
+                    .padding(horizontal = 20.dp)
+                    .padding(top = 8.dp, bottom = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Text(
+                    status,
+                    color = MenulyMuted,
+                    fontSize = 13.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(Modifier.height(12.dp))
+                GradientButton(
+                    text = if (scanning) {
+                        stringResource(R.string.scan_scanning)
+                    } else {
+                        stringResource(R.string.scan_action)
+                    },
+                    onClick = {
+                        val capture = imageCapture ?: return@GradientButton
+                        runScan(capture)
+                    },
+                    enabled = hasCameraPermission && !scanning && imageCapture != null,
+                )
+            }
         }
-
-        Text(
-            status,
-            color = MenulyMuted,
-            fontSize = 13.sp,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 20.dp),
-        )
-        Spacer(Modifier.height(12.dp))
-
-        GradientButton(
-            text = if (scanning) {
-                stringResource(R.string.scan_scanning)
-            } else {
-                stringResource(R.string.scan_action)
-            },
-            onClick = {
-                val capture = imageCapture ?: return@GradientButton
-                runScan(capture)
-            },
-            enabled = hasCameraPermission && !scanning && imageCapture != null,
-            modifier = Modifier
-                .padding(horizontal = 20.dp)
-                .padding(bottom = 24.dp),
-        )
     }
 }
 

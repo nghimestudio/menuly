@@ -1,0 +1,33 @@
+=== Tên app (tối đa 30 ký tự) ===
+Menuly
+
+=== Mô tả ngắn (tối đa 80 ký tự) ===
+AI waiter — scan menu, chọn mood, nhận 1 món gợi ý rõ ràng.
+
+=== Mô tả đầy đủ ===
+Menuly là AI waiter ngay trên bàn ăn của bạn.
+
+Chụp menu. Chọn mood. Nhận một món gợi ý dứt khoát — kiểu waiter tư vấn, không phải bảng đếm calo.
+
+CÁCH DÙNG
+1. Chọn mood: Recommend me, Budget, Delicious, High protein hoặc Green diet
+2. Scan menu nhà hàng bằng camera
+3. Menuly đọc menu và chọn món khớp mood lúc đó
+4. Hỏi thêm Ask Waiter nếu muốn đổi hướng
+
+VÌ SAO MENULY
+• Gợi ý theo mood — không phải list dài bất tận
+• Một món chính + runner-up + món nên bỏ qua
+• Đa ngôn ngữ (Anh, Việt, Trung, Nhật, Hàn)
+• Lưu lịch sử gợi ý trên máy
+• UI tối, nhanh, dễ nhìn dưới ánh sáng nhà hàng
+
+PHÙ HỢP KHI
+Du lịch đọc menu ngoại ngữ. Nhóm bạn không quyết định nổi. Ai muốn một câu trả lời rõ ràng thay vì suy nghĩ quá nhiều.
+
+LƯU Ý
+• Gợi ý là ước lượng AI từ chữ trên menu — luôn xác nhận dị ứng / nguyên liệu với nhân viên.
+• Camera chỉ dùng để đọc menu.
+• Nội dung menu được gửi tới API bảo mật để AI tư vấn món.
+
+Menuly — ngồi xuống, scan, quyết định.

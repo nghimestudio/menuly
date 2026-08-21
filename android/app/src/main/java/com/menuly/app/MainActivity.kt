@@ -117,7 +117,9 @@ private fun MenulyNav(app: MenulyApp) {
         }
     }
 
-    LaunchedEffect(state.isAnalyzing, state.result, state.error) {
+    // NavHost is only composed after bootReady — navigating earlier crashes.
+    LaunchedEffect(bootReady, state.isAnalyzing, state.result, state.error) {
+        if (!bootReady) return@LaunchedEffect
         when {
             state.isAnalyzing -> {
                 if (nav.currentDestination?.route != Routes.Analyzing) {

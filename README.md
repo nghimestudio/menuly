@@ -76,3 +76,13 @@ Debug APK (after build): `android/app/build/outputs/apk/debug/app-debug.apk`
 Not a calorie counter — an **AI waiter**: mood-first, default **Surprise me**, one pick + why (taste, value, protein, signature vibe).
 
 Allergen/nutrition fields are estimates only; the UI always shows a disclaimer.
+
+## Play Store pack
+
+Ready-to-upload assets + listing copy live in [`play-store/`](play-store/UPLOAD_CHECKLIST.md):
+
+- Icons, feature graphic, screenshots
+- EN/VI store listing text
+- Privacy policy (`docs/privacy-policy.html` for GitHub Pages)
+- Console answers + release signing notes (`android/KEYSTORE.md`)
+

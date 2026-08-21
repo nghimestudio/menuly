@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menuly Privacy Policy</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.55; background: #0a0a0c; color: #f2f2f2; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.8rem; color: #ff2d92; }
+    .muted { color: #9a9aa0; font-size: 0.95rem; }
+    a { color: #ff8a3d; }
+  </style>
+</head>
+<body>
+  <h1>Menuly Privacy Policy</h1>
+  <p class="muted">Last updated: August 21, 2026 · App: Menuly (<code>com.menuly.app</code>)</p>
+
+  <p>Menuly (“we”, “the app”) helps you scan a restaurant menu and get an AI dish recommendation. This policy explains what data we use and why.</p>
+
+  <h2>1. Information we process</h2>
+  <ul>
+    <li><strong>Camera images (on device):</strong> Used only to read menu text with on-device OCR. We do not upload raw photos to our servers by default — only the extracted menu text is sent for recommendations.</li>
+    <li><strong>Menu text:</strong> Sent to our API (Cloudflare Worker) and processed by an AI model (via Replicate) to generate a dish recommendation.</li>
+    <li><strong>Mood / notes / language:</strong> Sent with the menu text so recommendations match your preference.</li>
+    <li><strong>Local history:</strong> Past suggestions are stored on your device (Room database). They are not synced to our servers.</li>
+  </ul>
+
+  <h2>2. Permissions</h2>
+  <ul>
+    <li><strong>Camera</strong> — scan menus</li>
+    <li><strong>Internet</strong> — call the Menuly API for AI recommendations</li>
+  </ul>
+
+  <h2>3. How we use data</h2>
+  <p>We use menu text and your selected mood solely to generate and improve the in-app recommendation experience. We do not sell your personal data. We do not use your menu scans for advertising.</p>
+
+  <h2>4. Third-party processors</h2>
+  <ul>
+    <li><strong>Cloudflare</strong> — hosts the Menuly API</li>
+    <li><strong>Replicate</strong> — runs the AI model that generates recommendations</li>
+  </ul>
+  <p>These providers process data only to fulfill the request. Do not include personal identifiers in menu notes.</p>
+
+  <h2>5. Data retention</h2>
+  <ul>
+    <li>On-device history remains until you delete it or uninstall the app.</li>
+    <li>API requests are processed to return a recommendation and are not used to build a personal profile.</li>
+  </ul>
+
+  <h2>6. Children’s privacy</h2>
+  <p>Menuly is not directed at children under 13. We do not knowingly collect children’s data.</p>
+
+  <h2>7. Security</h2>
+  <p>API traffic uses HTTPS. Still, avoid putting passwords, payment details, or sensitive personal data into chat notes.</p>
+
+  <h2>8. Your choices</h2>
+  <ul>
+    <li>Deny camera permission — scanning will not work</li>
+    <li>Clear app data / uninstall to remove local history</li>
+  </ul>
+
+  <h2>9. Contact</h2>
+  <p>Questions about privacy: <a href="mailto:myuni1001@gmail.com">myuni1001@gmail.com</a></p>
+
+  <h2>10. Changes</h2>
+  <p>We may update this policy. The “Last updated” date at the top will change when we do.</p>
+</body>
+</html>

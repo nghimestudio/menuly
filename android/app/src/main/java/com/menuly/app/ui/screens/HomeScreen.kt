@@ -3,7 +3,6 @@ package com.menuly.app.ui.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,10 +18,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DocumentScanner
-import androidx.compose.material.icons.filled.Folder
-import androidx.compose.material.icons.filled.Language
-import androidx.compose.material.icons.filled.Restaurant
+import androidx.compose.material.icons.outlined.DocumentScanner
+import androidx.compose.material.icons.outlined.Folder
+import androidx.compose.material.icons.outlined.Language
+import androidx.compose.material.icons.outlined.Restaurant
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -37,12 +36,14 @@ import androidx.compose.ui.unit.sp
 import com.menuly.app.R
 import com.menuly.app.data.model.Moods
 import com.menuly.app.ui.MenulyUiState
+import com.menuly.app.ui.components.BrandTitle
 import com.menuly.app.ui.components.GradientButton
+import com.menuly.app.ui.components.GradientPillBadge
 import com.menuly.app.ui.components.MoodChip
 import com.menuly.app.ui.theme.AccentPink
 import com.menuly.app.ui.theme.MenulyBlack
-import com.menuly.app.ui.theme.MenulyGradient
 import com.menuly.app.ui.theme.MenulyMuted
+import com.menuly.app.ui.theme.MenulySans
 import com.menuly.app.ui.theme.MenulyWhite
 
 @Composable
@@ -63,40 +64,22 @@ fun HomeScreen(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 20.dp, vertical = 12.dp),
+                .padding(horizontal = 20.dp, vertical = 10.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(
-                text = "Menuly",
-                color = MenulyWhite,
-                fontSize = 28.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.weight(1f),
-            )
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(50))
-                    .background(MenulyGradient)
-                    .padding(horizontal = 12.dp, vertical = 6.dp),
-            ) {
-                Text(
-                    stringResource(R.string.ai_waiter),
-                    color = MenulyWhite,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                )
-            }
-            Spacer(Modifier.width(4.dp))
+            BrandTitle(modifier = Modifier.weight(1f), fontSize = 28)
+            GradientPillBadge(text = stringResource(R.string.ai_waiter))
+            Spacer(Modifier.width(2.dp))
             IconButton(onClick = onLanguage) {
                 Icon(
-                    Icons.Default.Language,
+                    Icons.Outlined.Language,
                     contentDescription = stringResource(R.string.change_language),
                     tint = MenulyWhite,
                 )
             }
             IconButton(onClick = onHistory) {
                 Icon(
-                    Icons.Default.Folder,
+                    Icons.Outlined.Folder,
                     contentDescription = stringResource(R.string.history),
                     tint = MenulyWhite,
                 )
@@ -112,13 +95,13 @@ fun HomeScreen(
             Text(
                 text = stringResource(R.string.mood_question),
                 color = MenulyWhite,
+                fontFamily = MenulySans,
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Medium,
+                fontWeight = FontWeight.SemiBold,
             )
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(14.dp))
 
-            // 5 moods — wrap so all visible without a duplicate quick button
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Moods.all.chunked(3).forEach { rowMoods ->
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         rowMoods.forEach { mood ->
@@ -137,6 +120,7 @@ fun HomeScreen(
             Text(
                 text = stringResource(R.string.home_hint),
                 color = MenulyMuted,
+                fontFamily = MenulySans,
                 fontSize = 13.sp,
                 lineHeight = 20.sp,
             )
@@ -146,51 +130,49 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
-                .padding(bottom = 12.dp),
+                .padding(bottom = 8.dp),
         ) {
             GradientButton(
                 text = stringResource(R.string.scan_menu),
                 onClick = onScan,
                 icon = {
                     Icon(
-                        Icons.Default.DocumentScanner,
+                        Icons.Outlined.DocumentScanner,
                         contentDescription = null,
                         tint = MenulyWhite,
                         modifier = Modifier.size(22.dp),
                     )
                 },
             )
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(14.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly,
             ) {
                 NavItem(
-                    icon = {
-                        Icon(
-                            Icons.Default.Restaurant,
-                            null,
-                            tint = AccentPink,
-                            modifier = Modifier.size(22.dp),
-                        )
-                    },
-                    label = stringResource(R.string.nav_waiter),
                     selected = true,
+                    label = stringResource(R.string.nav_waiter),
                     onClick = {},
-                )
+                ) {
+                    Icon(
+                        Icons.Outlined.Restaurant,
+                        null,
+                        tint = if (it) AccentPink else MenulyMuted,
+                        modifier = Modifier.size(22.dp),
+                    )
+                }
                 NavItem(
-                    icon = {
-                        Icon(
-                            Icons.Default.Folder,
-                            null,
-                            tint = MenulyMuted,
-                            modifier = Modifier.size(22.dp),
-                        )
-                    },
-                    label = stringResource(R.string.nav_history),
                     selected = false,
+                    label = stringResource(R.string.nav_history),
                     onClick = onHistory,
-                )
+                ) {
+                    Icon(
+                        Icons.Outlined.Folder,
+                        null,
+                        tint = if (it) AccentPink else MenulyMuted,
+                        modifier = Modifier.size(22.dp),
+                    )
+                }
             }
         }
     }
@@ -198,10 +180,10 @@ fun HomeScreen(
 
 @Composable
 private fun NavItem(
-    icon: @Composable () -> Unit,
-    label: String,
     selected: Boolean,
+    label: String,
     onClick: () -> Unit,
+    icon: @Composable (selected: Boolean) -> Unit,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -210,11 +192,12 @@ private fun NavItem(
             .clickable(onClick = onClick)
             .padding(8.dp),
     ) {
-        icon()
+        icon(selected)
         Spacer(Modifier.height(4.dp))
         Text(
             label,
             color = if (selected) AccentPink else MenulyMuted,
+            fontFamily = MenulySans,
             fontSize = 11.sp,
             fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
         )

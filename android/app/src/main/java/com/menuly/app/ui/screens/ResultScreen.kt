@@ -19,9 +19,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.Send
-import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
+import androidx.compose.material.icons.automirrored.outlined.Send
+import androidx.compose.material.icons.outlined.EmojiEvents
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -86,7 +86,7 @@ fun ResultScreen(
             modifier = Modifier.padding(horizontal = 8.dp),
         ) {
             IconButton(onClick = onBack, enabled = !isAsking) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = MenulyWhite)
+                Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Back", tint = MenulyWhite)
             }
             Text(
                 stringResource(R.string.result_title),
@@ -122,7 +122,7 @@ fun ResultScreen(
                 .padding(horizontal = 20.dp),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.EmojiEvents, null, tint = AccentPink, modifier = Modifier.size(28.dp))
+                Icon(Icons.Outlined.EmojiEvents, null, tint = AccentPink, modifier = Modifier.size(28.dp))
                 Spacer(Modifier.width(8.dp))
                 Text(
                     stringResource(R.string.result_pick_heading),
@@ -340,7 +340,7 @@ fun ResultScreen(
                 enabled = !isAsking && followUpNote.trim().length >= 2,
                 icon = {
                     Icon(
-                        Icons.AutoMirrored.Filled.Send,
+                        Icons.AutoMirrored.Outlined.Send,
                         contentDescription = null,
                         tint = MenulyWhite,
                         modifier = Modifier.size(18.dp),

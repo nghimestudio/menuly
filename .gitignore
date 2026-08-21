@@ -33,6 +33,8 @@ android/local.properties
 android/.idea/
 *.keystore
 *.jks
+android/keystore.properties
+android/menuly-upload.jks
 
 # OS
 .DS_Store
@@ -40,3 +42,4 @@ Thumbs.db
 
 # Kotlin/IDE noise
 android/.kotlin/
+android/KEYSTORE_CREDENTIALS.txt
